@@ -3,11 +3,14 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
+  "runArgs": ["--security-opt", "seccomp=unconfined"],
+  "postCreateCommand": "bash .devcontainer/install_java.sh",
   "customizations": {
     "vscode": {
       "extensions": [
         "vscjava.vscode-java-pack"
       ]
     }
-  }
+  },
+  "remoteUser": "vscode"
 }
