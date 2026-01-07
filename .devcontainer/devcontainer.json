@@ -1,7 +1,8 @@
 {
   "name": "Trino Development",
-  "image": "mcr.microsoft.com/devcontainers/base:debian",
-  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
   "customizations": {
     "vscode": {
       "extensions": [
@@ -9,8 +10,5 @@
       ]
     }
   },
-  "remoteUser": "vscode",
-  "containerEnv": {
-    "JAVA_HOME": "/opt/java/temurin-25"
-  }
+  "remoteUser": "vscode"
 }
