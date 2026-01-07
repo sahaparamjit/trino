@@ -1,15 +1,7 @@
 {
   "name": "Trino Development",
   "image": "mcr.microsoft.com/devcontainers/base:debian",
-  "features": {
-    "ghcr.io/devcontainers/features/java:1": {
-      "version": "25",
-      "jdkDistro": "tem",
-      "installMaven": "true",
-      "mavenVersion": "latest"
-    },
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
-  },
+  "postCreateCommand": "bash .devcontainer/setup.sh",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -17,5 +9,8 @@
       ]
     }
   },
-  "remoteUser": "vscode"
+  "remoteUser": "vscode",
+  "containerEnv": {
+    "JAVA_HOME": "/opt/java/temurin-25"
+  }
 }
